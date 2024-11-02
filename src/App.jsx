@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
-import Placeholder from "./components/Placeholder/Placeholder";
+
 import Navbar from "./components/UI/Navbar/Navbar";
 import Footer from "./components/UI/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/order" element={<Placeholder />} />
+        <Route path="/order" element={<PlaceOrder />} />
       </Routes>
     </div>
     <Footer />

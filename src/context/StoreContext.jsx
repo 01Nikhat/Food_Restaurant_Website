@@ -23,17 +23,27 @@ const StoreContextProvider = (props) => {
     setCartItems((prevVal)=>({...prevVal,[itemId]:prevVal[itemId]-1}));
     //preVal mai jo hai usko aise hi rahne do or  jis id mai call hua hai uska cardItem -1 hoga like it will show id is 5 and preVal is is 2 ,then it will show [5:1] -1 subtract ho jayega 
   }
+  const getTotalCartAmount = () =>{
+    let totalAmaount = 0;
+    for(const item in cartItems){
+      if (cartItems[item]>0) {
+        let itemInfo =  food_list.find((product)=>product._id === item);
+        totalAmaount += itemInfo.price * cartItems[item];
+      }
+      
+    }
+    return totalAmaount;
+  }
   const contextValue = {
     food_list,
     cartItems,
     setCartItems,
     addToCart,
     removeFromCart,
+    getTotalCartAmount,
   };
-useEffect(()=>{
-console.log(cartItems);
+// 
 
-},[cartItems]);
 
   return (
     <StoreContext.Provider value={contextValue}>
