@@ -27,8 +27,8 @@ gap: 20px;
   cursor: pointer;
   }
 .footer-content-left .logo{
-  width: 20vw;
-  height: 20vw;
+  width: 15vw;
+  height: 15vw;
 }
 .footer-content-right h2, .footer-content-center h2{
   color: tomato;
@@ -43,4 +43,15 @@ gap: 20px;
   height: 2px;
   background-color: grey;
   border: none;
+}
+
+@media (max-width:750px) {
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+  .footer-copyright{
+    text-align: center;
+  }
 }
