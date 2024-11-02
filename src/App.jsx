@@ -5,12 +5,14 @@ import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
 import Placeholder from "./components/Placeholder/Placeholder";
 import Navbar from "./components/UI/Navbar/Navbar";
+import Footer from "./components/UI/Footer/Footer";
 
 
 function App() {
   
 
   return (
+    <>
     <div className="app">
       <Navbar />
       <Routes>
@@ -19,6 +21,8 @@ function App() {
         <Route path="/order" element={<Placeholder />} />
       </Routes>
     </div>
+    <Footer />
+    </> 
   )
 }
 
