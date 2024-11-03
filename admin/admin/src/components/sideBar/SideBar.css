@@ -29,3 +29,8 @@
   }
   
 }
+.sidebar-option.active{
+  background-color: #f0e1de;
+  border-color: tomato;
+
+}
