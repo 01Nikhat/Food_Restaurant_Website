@@ -14,21 +14,27 @@ const StoreContextProvider = (props) => {
   const [food_list,setFoodlist] = useState([]);
 
 //itemId main id value pass kar rahe hai 
-  const addToCart= (itemId)=>{
+  const addToCart = async(itemId) => {
     //check carItems[itemId] main 0 value present  hai the if statement true or cardItem mai 1 assign ho jayega 
     if(!cartItems[itemId]){
       setCartItems((prevVal)=>({...prevVal,[itemId]:1}))
-      //preVal mai jo hai usko aise hi rahne do or or jis id mai call hua hai uska cardItem 1 hoga like it will show id is 5 then it will show [5:1]
+      //preVal mai jo hai usko aise hi rahne do or or jis id; mai call hua hai uska cardItem 1 hoga like it will show id is 5 then it will show [5:1]
     }
     else{
       setCartItems((prevVal)=>({...prevVal,[itemId]:prevVal[itemId]+1}))
       //preVal mai jo hai usko aise hi rahne do or  jis id mai call hua hai uska cardItem +1 hoga like it will show id is 5 and preVal is is 2 ,then it will show [5:3] +1 add ho jayega 
     }
+    if (token) {
+      await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
+    }
   }
 
-  const removeFromCart = (itemId) =>{
+  const removeFromCart = async(itemId) =>{
     setCartItems((prevVal)=>({...prevVal,[itemId]:prevVal[itemId]-1}));
     //preVal mai jo hai usko aise hi rahne do or  jis id mai call hua hai uska cardItem -1 hoga like it will show id is 5 and preVal is is 2 ,then it will show [5:1] -1 subtract ho jayega 
+    if (token) {
+      await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}});
+    }
   }
   const getTotalCartAmount = () =>{
     let totalAmaount = 0;
@@ -46,12 +52,18 @@ const StoreContextProvider = (props) => {
     const response = await axios.get(url+"/api/food/list");
     setFoodlist(response.data.data)
   }
+  const loadCartData = async(token) =>{
+      const response = await axios.post(url+"/api/cart/get",{},{headers:{token}});
+      setCartItems(response.data.cartData);
+
+  }
   useEffect(()=>{
     
     async function loadData() {
       await fethFoodList();
       if (localStorage.getItem("token")) {
         setToken(localStorage.getItem("token"));
+        await loadCartData(localStorage.getItem("token"));
     }
     }
     loadData();
