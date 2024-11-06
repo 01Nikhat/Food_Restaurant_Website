@@ -13,7 +13,14 @@ a{
   text-decoration: none;
   color: inherit;
 }
-.app{
-  width: 80%;
-  margin: auto;
+.app {
+  width: 100%;
+   /* Adjust the max-width as needed */
+  
+}
+.app, .app-element {
+  width: 100%;
+  
+  max-width: 1200vw; 
+  margin: 0 auto;
 }

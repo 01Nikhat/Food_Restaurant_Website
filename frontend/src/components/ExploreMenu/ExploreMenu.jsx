@@ -1,6 +1,7 @@
 import React from 'react';
 import "./ExploreMenu.css";
 import {menu_list} from "../../assets/frontend_assets/assets" ;
+import { assets } from "../../assets/frontend_assets/assets";
 
 const ExploreMenu = ({category,setCategory}) => {
 
@@ -23,6 +24,10 @@ const ExploreMenu = ({category,setCategory}) => {
           )
         })}
       </div>
+      <img src={assets.shap1} width="246" height="412" loading="lazy" alt="shape"
+            class="shape shape-1 move-anim" />
+          <img src={assets.shap2} width="343" height="345" loading="lazy" alt="shape"
+            class="shape shape-2 move-anim" />
       <hr />
 
     </div>

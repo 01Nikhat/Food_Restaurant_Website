@@ -1,141 +1,208 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-.navbar img{
-  height: 4rem;
-  width: 6rem;
-}
-.navbar{
-  padding: 16px 0px;
+/* Navbar Layout */
+.navbar {
+  padding: 16px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  width: 100vw;
+  top: 0;
+  z-index: 10;
+  background: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.navbar-menu{
+.navbar .logo{
+  height: 4rem;
+  width: 5rem;
+}
+
+.navbar img {
+  height: 4rem;
+  width: auto;
+}
+
+.navbar-menu {
   display: flex;
   list-style: none;
   gap: 20px;
-  color: #49557e;
+  color: white;
   font-size: 18px;
 }
-.navbar-right{
-  display: flex;
-  align-items: center;
-  gap:40px
+/* When scrolled, add a white background and dark text */
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
-.navbar button{
+
+.navbar.scrolled .navbar-menu,
+.navbar.scrolled button {
+  color: #5a0101; /* Darker text color for contrast */
+}
+
+.navbar.scrolled .navbar-menu li:hover,
+.navbar.scrolled button:hover {
+  color: #5a0101; /* Hover color */
+}
+/*  Button Styling when scrolled*/
+.navbar.scrolled button {
   background: transparent;
   font-size: 16px;
-  color: #49557e;
-  border: 1px solid tomato;
+  color: #5a0101;
+  border: 1px solid #5a0101;
   padding: 10px 30px;
-  border-radius: 50px;
+  border-radius: 25px;
   cursor: pointer;
 }
-.navbar button:hover{
+
+.navbar.scrolled button:hover {
   background-color: #fff4f2;
 }
-.navbar-right img{
-  height: 2rem;
-  width: 2rem;
+/* button style for not scrool  */
+.navbar button {
+  background: transparent;
+  font-size: 16px;
+  color: #5a0101;
+  border: 1px solid #fff4f2;
+  padding: 10px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  background-color: white;
 }
-.navbar .active{
-  padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
 
+.navbar button:hover {
+  background-color: #fff4f2;
 }
-.navbar li{
+
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Search Bar */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+
+.navbar-search input {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 25px;
+  width: 150px;
+  color: #333;
+}
+
+.search-icon {
+  margin-left: 10px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
 }
-.navbar-search-icon{
+
+/* Cart Icon with Notification Dot */
+.navbar-cart-icon {
   position: relative;
 }
-.navbar-search-icon .dot{
+
+.navbar-cart-icon .dot {
   position: absolute;
   min-width: 10px;
   min-height: 10px;
   background-color: tomato;
-  border-radius: 5px;
-  top:-8px;
-  right: -8px;
-}
-/* for bigger screen */
-@media (max-width:1050px) {
-  .navbar .logo{
-    width:140px;
-  }
-  .navbar-menu{
-    gap: 20px;
-    font-size: 17px;
-  }
-  .navbar-right{
-    gap: 30px;
-
-  }
-  .navbar-right img{
-    width: 22px;
-  }
-  .navbar-right button{
-    padding: 8px 25px;
-  }
-}
-/* */
-@media (max-width:900px) {
-  .navbar .logo{
-    width:100px;
-  }
-  .navbar-menu{
-    gap: 15px;
-    font-size: 16px;
-  }
-  .navbar-right{
-    gap: 20px;
-
-  }
-  .navbar-right img{
-    width: 20px;
-  }
-  .navbar-right button{
-    padding: 7px 20px;
-    font-size: 15px;
-  }
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
 }
 
-@media (max-width:750px) {
-  
-  .navbar-menu{
-    display: none;
-  }
-  
-}
-.navbar-profile{
+/* Profile Dropdown */
+.navbar-profile {
   position: relative;
+}
 
-}
-.nav-profile-dropdown{
-  position: absolute;
-  display: none;
-  right: 0;
-  z-index: 1;
-}
-.navbar-profile:hover .nav-profile-dropdown{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #fff2ef;
-  padding: 12px 25px;
-  border-radius: 4px;
-  border: 1px solid tomato;
-  outline: 2px solid white;
-  list-style: none;
-}
-.nav-profile-dropdown li{
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.navbar-profile img {
   cursor: pointer;
 }
-.nav-profile-dropdown img{
-  width: 20px;
+
+.nav-profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  color: #333;
+  list-style: none;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
-.nav-profile-dropdown li:hover{
-  color: tomato;
+
+.navbar-profile:hover .nav-profile-dropdown {
+  display: block;
+}
+
+.nav-profile-dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav-profile-dropdown li:hover {
+  background-color: #f3f3f3;
+}
+
+/* Button Styling */
+
+
+/* Active Menu Highlight */
+.navbar .active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #310101;
+}
+
+/* Media Queries */
+@media (max-width: 750px) {
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-right {
+    gap: 15px;
+  }
+  .navbar-search input {
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-search input {
+    width: 80px;
+  }
+}
+.navbar-right img {
+  height: 2rem; /* Smaller height for icons */
+  width: 2rem; /* Smaller width for icons */
+}
+.navbar-right img.search-icon {
+  height: 1.5rem; /* Adjust size of the search icon */
+  width: 1.5rem;
+  margin-left: -30px; /* Position the icon over the input field */
+  cursor: pointer;
+}
+
+/* Style for cart icon */
+.navbar-search-icon img {
+  height: 2rem; /* Adjust the cart icon size */
+  width: 2rem;
+}
+
+/* Dot indicator for cart */
+.navbar-search-icon .dot {
+  min-width: 8px;
+  min-height: 8px;
 }

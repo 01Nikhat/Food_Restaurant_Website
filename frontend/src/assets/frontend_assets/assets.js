@@ -1,5 +1,5 @@
 import basket_icon from './basket_icon.png'
-import logo from './logo.png'
+import logo from './logo.gif'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './menu_1.png'
@@ -10,6 +10,20 @@ import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
+import slider1 from './slider1.jpg'
+import slider2 from "./slider2.jpg"
+import slider3 from "./slider3.jpg"
+import shape1 from "./shape-1.png"
+import shape2 from "./shape-1.png"
+import shape3 from "./shape-1.png"
+import shape4 from "./shape-1.png"
+import shape5 from "./shape-1.png"
+import shape6 from "./shape-1.png"
+import shape7 from "./shape-1.png"
+import shape8 from "./shape-1.png"
+
+
+
 
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'

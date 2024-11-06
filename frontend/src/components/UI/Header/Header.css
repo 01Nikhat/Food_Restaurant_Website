@@ -1,79 +1,151 @@
-.header{
-  height: 34vw;
-  margin : 30px auto;
-  background: url("../../../../public/header_img.png") no-repeat;
-  background-size: contain;
-  position: relative;
-
-}
-.header-contents{
-  position: absolute;
+/* Header Styles */
+.header {
+  width: 100vw;  /* Ensures full viewport width */
+  min-height: 100vh;  /* Ensures full viewport height */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  gap: 1.5vw;
-  max-width: 50%;
-  bottom: 10%;
-  left: 6vw;
-  animation: fadeIn 3s;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);  /* Optional: Dark overlay */
+  margin: 0;
+  padding: 0;
+  margin-top: -100px;
+  z-index: 1;  /* Ensures it stays behind the navbar */
 }
-.header-contents h2{
+
+.header-contents {
+  display: flex;
+  flex-direction: column;  /* Stack elements vertically */
+  align-items: center;  /* Center align content horizontally */
+  justify-content: center;  /* Center align content vertically */
+  position: relative;
+  z-index: 2;  /* Ensures header content is above the image */
+  text-align: center;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;  /* Optional: for visual appeal */
+}
+
+.header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: zoom 10s linear infinite alternate;
+  z-index: 1;  /* Keeps the image behind the content */
+}
+
+/* Heading Styles */
+.header-contents h2 {
   color: white;
   font-weight: 500;
-  font-size: max(4.5vw,22px);
+  font-size: max(4.5vw, 22px);
+  text-align: center;
+  margin-bottom: 1rem;  /* Spacing between elements */
 }
-.header-contents p{
+
+/* Paragraph Styles */
+.header-contents p {
   color: white;
-  font-size: 1vw;
-}
-.header-contents button{
-  border: none;
-  color: #747474;
-  font-weight: 500;
-  padding: 1vw 2.3vw;
+  font-size: 2vw;
   margin-bottom: 1rem;
+}
+
+/* Button Styles */
+/* button */
+
+.btn {
+  margin: 20px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #5a0101;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 15px;
+}
+.btn::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: white;
-  font-size: max(1vw,13px);
-  border-radius: 50px;
-}
-@keyframes fadeIn {
-  0%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-}
+  left: 0;
+  top: 0;
+  border-radius: 15px;
  
-@media (max-width:1050px) {
-  .header{
-    height: 38vw;
-  }
-  .header-contents{
-    max-width: 45%;
-  }
+}
+/* glow */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 0;
 }
 
-@media (max-width:750px) {
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
 
-  .header-contents{
+/* hover */
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active:after {
+  background: transparent;
+}
+
+.btn:active {
+  color: #000;
+  font-weight: bold;
+}
+
+/* Keyframes for animations */
+@keyframes zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 750px) {
+  .header-contents {
     max-width: 55%;
   }
-  .header-contents p{
-    display: none;
+  .header-contents p {
+    display: none;  /* Hide paragraph for small screens */
   }
   
-  .header-contents button{
-    padding: 2vw 4vw;
-    margin-bottom: 1rem;
-  }
 }
-@media (max-width:400px) {
-  .header-contents h2{
+
+@media (max-width: 400px) {
+  .header-contents h2 {
     font-size: 15px;
   }
-  .header-contents button{
-    padding: 1vw 2vw;
-    margin-bottom: 12px;
-  }
+  
 }
