@@ -1,12 +1,18 @@
 import React from 'react';
 import "./ExploreMenu.css";
 import {menu_list} from "../../assets/frontend_assets/assets" ;
-import { assets } from "../../assets/frontend_assets/assets";
+//import { assets } from "../../assets/frontend_assets/assets";
+import shape1 from "../../assets/frontend_assets/shape-1.png"
+import shape2 from "../../assets/frontend_assets/shape-2.png"
 
 const ExploreMenu = ({category,setCategory}) => {
 
   return (
     <div className='explore-menu' id='explore-menu'>
+      <img src={shape1} width="246" height="412" loading="lazy" alt="shape"
+            className="shape shape-1 move-anim" />
+      <img src={shape2} width="343" height="345" loading="lazy" alt="shape"
+            className="shape shape-2 move-anim" />
       <h1>Explore our Menu</h1>
       <p className='explore-menu-text'>choose from a diverse menu featuring a delectable array of dishes. Our mission is to </p>
       <div className="explore-menu-list">
@@ -24,10 +30,7 @@ const ExploreMenu = ({category,setCategory}) => {
           )
         })}
       </div>
-      <img src={assets.shap1} width="246" height="412" loading="lazy" alt="shape"
-            class="shape shape-1 move-anim" />
-          <img src={assets.shap2} width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim" />
+          
       <hr />
 
     </div>

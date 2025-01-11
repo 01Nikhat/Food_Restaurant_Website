@@ -8,6 +8,7 @@ import Navbar from "./components/UI/Navbar/Navbar";
 import Footer from "./components/UI/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+import MyOrders from "./components/MyOrder/MyOrders";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />}  />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<PlaceOrder />} />
+       <Route path="/myorders" element={<MyOrders /> } />
       </Routes>
       </div>
     </div>
