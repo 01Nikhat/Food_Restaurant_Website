@@ -157,6 +157,14 @@ const PlaceOrder = () => {
     loadRazorpay();
   }, []);
 
+  useEffect(()=>{
+    if (!token) {
+      navigate("/cart")
+    }
+    else if(getTotalCartAmount === 0){
+        navigate("/cart")
+    }
+  },[token])
   const onChangeHandler = (event) => {
     const { name, value } = event.target;
     setData((prevData) => ({ ...prevData, [name]: value }));
