@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react';
 import { StoreContext } from '../../Context/StoreContext';
 import axios from 'axios';
+import './MyOrder.css';
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -20,11 +21,11 @@ const MyOrders = () => {
       setOrders(response.data.data);
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching orders:", error);
-      setError("Failed to fetch orders. Please try again.");
+      console.error('Error fetching orders:', error);
+      setError('Failed to fetch orders. Please try again.');
       setLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     if (token) {
@@ -43,26 +44,44 @@ const MyOrders = () => {
       ) : (
         <ul>
           {orders.map((order) => (
-            <li key={order._id}>
-              <h3>Order ID: {order._id}</h3>
-              <p>Date: {new Date(order.date).toLocaleString()}</p>
-              <p>Status: {order.status}</p>
-              <p>Total Amount: ₹{order.amount}</p>
-              <h4>Items:</h4>
-              <ul>
-                {order.items.map((item, index) => (
-                  <li key={index}>
-                    {item.name} - Quantity: {item.quantity}
-                  </li>
-                ))}
-              </ul>
+            <li key={order._id} className="order-item">
+              {/* First Row */}
+              <div className="order-row">
+                <h3>Order ID: {order._id}</h3>
+                <p className="order-status">
+                  <span className="status-dot"></span>
+                  Status: <span className={`status ${order.status.toLowerCase().replace(' ', '-')}`}>{order.status}</span>
+                </p>
+              </div>
+
+              {/* Second Row */}
+              <div className="order-row">
+                <p>Delivery Address: {order.address.address}</p>
+              </div>
+
+              {/* Third Row */}
+              <div className="order-items">
+                <h4>Items:</h4>
+                <ul>
+                  {order.items.map((item, index) => (
+                    <li key={index} className="order-item-detail">
+                      {item.name} - Quantity: {item.quantity} - Price: ₹{item.price}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Fourth Row */}
+              <div className="order-row">
+                <p className="order-amount">Total Amount: ₹{order.amount}</p>
+                <button className="order-button">Track Order</button>
+              </div>
             </li>
           ))}
         </ul>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default MyOrders
-
+export default MyOrders;

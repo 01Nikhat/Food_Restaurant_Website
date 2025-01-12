@@ -20,6 +20,7 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // DB connection
@@ -30,11 +31,19 @@ app.use("/api/food", foodRouter);
 app.use("/images", express.static('uploads'));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
-app.use('/api/order', orderRouter); // Make sure this is added
+app.use('/api/order', orderRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");
 });
+
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 
 // Start server
 app.listen(port, () => {
