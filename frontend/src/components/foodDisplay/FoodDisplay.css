@@ -1,16 +1,55 @@
-.food-display{
+.food-display {
   margin-top: 30px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 5%; /* Consistent padding on both sides */
 }
-.food-display h2{
-  font-size: max(2vw,24px);
+
+.food-display h2 {
+  font-size: max(2vw, 24px);
   font-weight: 600;
+  text-align: center; /* Center the heading */
+  margin-bottom: 30px; /* Add space below the heading */
+  color: #333; /* Darker text for better readability */
 }
+
 .food-display-list {
-  display: grid; /* Enables flexbox layout */
-  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
-  margin-top: 30px;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Responsive grid */
+  gap: 30px; /* Consistent spacing between items */
   row-gap: 50px;
+  padding: 20px 0; /* Add padding to the top and bottom */
+}
+
+/* Add hover effect to food items */
+.food-display-list .food-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure content stays within the rounded corners */
+  background: #fff; /* White background for each item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.food-display-list .food-item:hover {
+  transform: translateY(-5px); /* Lift the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Smaller cards on smaller screens */
+    gap: 20px;
+    row-gap: 30px;
+  }
+
+  .food-display h2 {
+    font-size: max(3vw, 20px); /* Adjust heading size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller cards for mobile */
+    gap: 15px;
+    row-gap: 25px;
+  }
 }

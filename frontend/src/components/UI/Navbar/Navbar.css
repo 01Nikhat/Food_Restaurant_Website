@@ -4,14 +4,51 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  width: 100vw;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 10;
-  background: transparent;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.navbar .logo{
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.transparent .navbar-menu,
+.navbar.transparent .navbar-menu a,
+.navbar.transparent .transparent-text,
+.navbar.transparent .transparent-icon,
+.navbar.transparent .transparent-button {
+  color: white;
+}
+
+.navbar.transparent .transparent-input {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.navbar.transparent .transparent-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar.transparent .transparent-button {
+  border-color: white;
+  color: white;
+}
+
+.navbar.transparent .transparent-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.navbar .logo {
   height: 4rem;
   width: 5rem;
 }
@@ -28,6 +65,7 @@
   color: white;
   font-size: 18px;
 }
+
 /* When scrolled, add a white background and dark text */
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
@@ -43,7 +81,8 @@
 .navbar.scrolled button:hover {
   color: #5a0101; /* Hover color */
 }
-/*  Button Styling when scrolled*/
+
+/* Button Styling when scrolled */
 .navbar.scrolled button {
   background: transparent;
   font-size: 16px;
@@ -57,7 +96,8 @@
 .navbar.scrolled button:hover {
   background-color: #fff4f2;
 }
-/* button style for not scrool  */
+
+/* Button style for not scrolled */
 .navbar button {
   background: transparent;
   font-size: 16px;
@@ -73,21 +113,28 @@
   background-color: #fff4f2;
 }
 
-
-
 .navbar-right {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-/* Search Bar */
+/*=========================== Search Bar ================== */
 .navbar-search {
   display: flex;
   align-items: center;
-  background: white;
+  background: transparent;
   border-radius: 25px;
   padding: 5px 10px;
+  transition: width 0.3s ease;
+  width: 40px; /* Default width for the search icon */
+  overflow: hidden;
+  position: relative; /* Ensure the icon stays inside the container */
+  height: 40px; /* Fixed height for the search bar */
+}
+
+.navbar-search.open {
+  width: 200px; /* Expanded width for the search bar */
 }
 
 .navbar-search input {
@@ -96,15 +143,59 @@
   padding: 5px 10px;
   font-size: 16px;
   border-radius: 25px;
-  width: 150px;
-  color: #333;
+  width: 100%;
+  color: white; /* Text color */
+  background-color: #5a0101; /* Input background color */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute; /* Position input absolutely within the container */
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.navbar-search input::placeholder {
+  color: white; /* Placeholder text color */
+  opacity: 0.7; /* Slightly transparent placeholder */
+}
+
+.navbar-search.open input {
+  opacity: 1; /* Show input when search bar is open */
 }
 
 .search-icon {
-  margin-left: 10px;
   height: 20px;
   width: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute; /* Position the icon absolutely */
+  right: 10px; /* Adjust the position of the icon */
+  top: 50%; /* Center the icon vertically */
+  transform: translateY(-50%);
+  z-index: 1; /* Ensure the icon is above the input */
+}
+
+.navbar-search.open .search-icon {
+  transform: translateY(-50%) translateX(-10px); /* Adjust icon position when expanded */
+}
+
+/* Transparent Navbar Styles */
+.navbar.transparent .navbar-search {
+  background: transparent; /* Semi-transparent background */
+}
+
+.navbar.transparent .navbar-search input {
+  color: white; /* Text color for transparent navbar */
+  background: transparent; /* Transparent input background */
+  border: 1px solid white; /* White border for input */
+}
+
+.navbar.transparent .navbar-search input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Placeholder text color for transparent navbar */
+}
+
+.navbar.transparent .search-icon {
+  filter: brightness(0) invert(1); /* Make the icon white */
 }
 
 /* Cart Icon with Notification Dot */
@@ -157,9 +248,6 @@
   background-color: #f3f3f3;
 }
 
-/* Button Styling */
-
-
 /* Active Menu Highlight */
 .navbar .active {
   padding-bottom: 2px;
@@ -179,30 +267,127 @@
   }
 }
 
+
+
 @media (max-width: 400px) {
   .navbar-search input {
     width: 80px;
   }
 }
+
 .navbar-right img {
   height: 2rem; /* Smaller height for icons */
   width: 2rem; /* Smaller width for icons */
 }
-.navbar-right img.search-icon {
-  height: 1.5rem; /* Adjust size of the search icon */
-  width: 1.5rem;
-  margin-left: -30px; /* Position the icon over the input field */
-  cursor: pointer;
-}
 
-/* Style for cart icon */
-.navbar-search-icon img {
-  height: 2rem; /* Adjust the cart icon size */
-  width: 2rem;
-}
 
 /* Dot indicator for cart */
 .navbar-search-icon .dot {
   min-width: 8px;
   min-height: 8px;
 }
+
+/* Transparent Navbar Styles */
+.navbar.transparent {
+  background: transparent;
+}
+
+.navbar.transparent .navbar-menu,
+.navbar.transparent .navbar-menu a,
+.navbar.transparent .navbar-menu .active,
+
+.navbar.transparent .navbar-cart-icon img,
+.navbar.transparent .navbar-profile img,
+.navbar.transparent button {
+  color: white;
+  fill: white; /* For SVG icons */
+}
+
+
+
+.navbar.transparent button {
+  border-color: white;
+  color: white;
+}
+
+.navbar.transparent button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+
+
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+
+  
+  .navbar-right button {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .mobile-menu-icon div {
+    width: 2rem;
+    height: 0.25rem;
+    background: #5a0101;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+  }
+
+  .navbar.transparent .mobile-menu-icon div {
+    background: white;
+    
+  }
+
+  .mobile-menu-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu-open a {
+    padding: 10px 0;
+    color: #5a0101;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .navbar.transparent .mobile-menu-open a {
+    color: #5a0101;
+  }
+
+  .navbar-cart-icon,
+  .navbar-profile {
+    display: flex;
+  }
+}
+

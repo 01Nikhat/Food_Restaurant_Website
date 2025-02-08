@@ -1,64 +1,42 @@
-/* Header Styles */
+/* Header Container */
 .header {
-  width: 100vw;  /* Ensures full viewport width */
-  min-height: 100vh;  /* Ensures full viewport height */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 100%;
+  min-height: 100vh; /* Ensures full screen height */
   display: flex;
-  justify-content: center;  /* Centers horizontally */
-  align-items: center;  /* Centers vertically */
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
-  background: rgba(0, 0, 0, 0.5);  /* Optional: Dark overlay */
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
   margin: 0;
   padding: 0;
-  margin-top: -100px;
-  z-index: 1;  /* Ensures it stays behind the navbar */
+  z-index: 1;
 }
 
-.header-contents {
-  display: flex;
-  flex-direction: column;  /* Stack elements vertically */
-  align-items: center;  /* Center align content horizontally */
-  justify-content: center;  /* Center align content vertically */
-  position: relative;
-  z-index: 2;  /* Ensures header content is above the image */
-  text-align: center;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;  /* Optional: for visual appeal */
-}
-
+/* Background Image */
 .header-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: cover;  /* Ensures it covers the full area */
   background-position: center;
-  animation: zoom 10s linear infinite alternate;
-  z-index: 1;  /* Keeps the image behind the content */
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
 }
 
-/* Heading Styles */
-.header-contents h2 {
-  color: white;
-  font-weight: 500;
-  font-size: max(4.5vw, 22px);
+/* Header Content */
+.header-contents {
+  position: relative;
+  z-index: 2;
   text-align: center;
-  margin-bottom: 1rem;  /* Spacing between elements */
-}
-
-/* Paragraph Styles */
-.header-contents p {
   color: white;
-  font-size: 2vw;
-  margin-bottom: 1rem;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 70%;
 }
 
-/* Button Styles */
 /* button */
 
 .btn {
@@ -66,11 +44,14 @@
   padding: 15px 40px;
   border: none;
   outline: none;
-  color: #5a0101;
+  color: black;
+  background-color: white;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 15px;
+  
+  
 }
 .btn::after {
   content: "";
@@ -82,6 +63,7 @@
   left: 0;
   top: 0;
   border-radius: 15px;
+  color: black;
  
 }
 /* glow */
@@ -126,26 +108,36 @@
   font-weight: bold;
 }
 
-/* Keyframes for animations */
-@keyframes zoom {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.2); }
-}
-
-/* Responsive adjustments */
-@media (max-width: 750px) {
-  .header-contents {
-    max-width: 55%;
-  }
+/* Responsive Adjustments */
+@media (max-width: 1024px) {  /* Tablets (iPad) */
   .header-contents p {
-    display: none;  /* Hide paragraph for small screens */
+    display: none;
   }
-  
+  .header-contents {
+    max-width: 60%;
+  }
 }
 
-@media (max-width: 400px) {
-  .header-contents h2 {
-    font-size: 15px;
+@media (max-width: 768px) {  /* Mobile Devices */
+  .header {
+    min-height: 80vh;  /* Adjust height */
   }
-  
+  .header-image {
+    background-size: cover;  /* Ensures full coverage */
+  }
+  .header-contents {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {  /* Extra Small Devices */
+  .header {
+    min-height: 100vh; /* Force full screen */
+  }
+  .header-contents h2 {
+    font-size: 20px;
+  }
+  .header-contents {
+    padding: 10px;
+  }
 }

@@ -9,6 +9,7 @@ import Footer from "./components/UI/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
 import MyOrders from "./components/MyOrder/MyOrders";
+import Cafe from "./components/Cafe/Cafe";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <div className="app-element">
       <Routes>
         <Route path="/" element={<Home />}  />
+        <Route path="/cafe" element = {<Cafe />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<PlaceOrder />} />
        <Route path="/myorders" element={<MyOrders /> } />

@@ -21,6 +21,9 @@ import shape5 from "./shape-1.png"
 import shape6 from "./shape-1.png"
 import shape7 from "./shape-1.png"
 import shape8 from "./shape-1.png"
+import cafe from "./cafe.jpg"
+import coffee from "./coffee.jpg"
+import cake from "./cake.jpg"
 
 
 
@@ -73,9 +76,12 @@ import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
+import cafeSlide from "./cafeSlide.jpg"
+
 
 export const assets = {
     logo,
+    cafeSlide,
     basket_icon,
     header_img,
     search_icon,
@@ -93,7 +99,14 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    cake,
+    coffee,
+    cafe,
+    slider1,
+    slider2,
+    slider3
+    
 }
 
 export const menu_list = [
