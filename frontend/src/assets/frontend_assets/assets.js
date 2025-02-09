@@ -14,13 +14,13 @@ import slider1 from './slider1.jpg'
 import slider2 from "./slider2.jpg"
 import slider3 from "./slider3.jpg"
 import shape1 from "./shape-1.png"
-import shape2 from "./shape-1.png"
-import shape3 from "./shape-1.png"
-import shape4 from "./shape-1.png"
-import shape5 from "./shape-1.png"
-import shape6 from "./shape-1.png"
-import shape7 from "./shape-1.png"
-import shape8 from "./shape-1.png"
+import shape2 from "./shape-2.png"
+import shape3 from "./shape-3.png"
+import shape4 from "./shape-4.png"
+import shape5 from "./shape-5.png"
+import shape6 from "./shape-6.png"
+import shape7 from "./shape-7.png"
+import shape8 from "./shape-8.png"
 import cafe from "./cafe.jpg"
 import coffee from "./coffee.jpg"
 import cake from "./cake.jpg"
@@ -60,6 +60,7 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+import food_33 from "./food_item_33.jpg"
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -105,7 +106,17 @@ export const assets = {
     cafe,
     slider1,
     slider2,
-    slider3
+    slider3,
+    shape1,
+    shape2,
+    shape3,
+    shape4,
+    shape5,
+    shape6,
+    shape7,
+    shape8,
+    food_33
+
     
 }
 
@@ -141,6 +152,10 @@ export const menu_list = [
     {
         menu_name: "Noodles",
         menu_image: menu_8
+    },
+    {
+        menu_name:"paratha",
+        menu_image: food_33
     }]
 
 export const food_list = [
@@ -373,5 +388,13 @@ export const food_list = [
         price: 45,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
+    },
+    {
+        _id: "33",
+        name: "Aloo Paratha",
+        image: food_33,
+        price: 45,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "paratha"
     }
 ]
