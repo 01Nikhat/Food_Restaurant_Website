@@ -46,8 +46,6 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .navbar .logo {
   height: 4rem;
   width: 5rem;
@@ -67,11 +65,6 @@
 }
 
 /* When scrolled, add a white background and dark text */
-.navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .navbar.scrolled .navbar-menu,
 .navbar.scrolled button {
   color: #5a0101; /* Darker text color for contrast */
@@ -191,7 +184,7 @@
 }
 
 .navbar.transparent .navbar-search input::placeholder {
-  color: rgba(255, 255, 255, 0.7); /* Placeholder text color for transparent navbar */
+  color: white; /* Placeholder text color for transparent navbar */
 }
 
 .navbar.transparent .search-icon {
@@ -267,8 +260,6 @@
   }
 }
 
-
-
 @media (max-width: 400px) {
   .navbar-search input {
     width: 80px;
@@ -279,7 +270,6 @@
   height: 2rem; /* Smaller height for icons */
   width: 2rem; /* Smaller width for icons */
 }
-
 
 /* Dot indicator for cart */
 .navbar-search-icon .dot {
@@ -295,15 +285,12 @@
 .navbar.transparent .navbar-menu,
 .navbar.transparent .navbar-menu a,
 .navbar.transparent .navbar-menu .active,
-
 .navbar.transparent .navbar-cart-icon img,
 .navbar.transparent .navbar-profile img,
 .navbar.transparent button {
   color: white;
   fill: white; /* For SVG icons */
 }
-
-
 
 .navbar.transparent button {
   border-color: white;
@@ -312,8 +299,10 @@
 
 .navbar.transparent button:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
 
-
+.navbar-search .searchcolor {
+  background-color: #310101;
 }
 
 /* Mobile Menu Styles */
@@ -330,7 +319,6 @@
     gap: 15px;
   }
 
-  
   .navbar-right button {
     display: none;
   }
@@ -360,7 +348,6 @@
 
   .navbar.transparent .mobile-menu-icon div {
     background: white;
-    
   }
 
   .mobile-menu-open {
@@ -381,6 +368,7 @@
     font-size: 18px;
     text-decoration: none;
   }
+
   .navbar.transparent .mobile-menu-open a {
     color: #5a0101;
   }
@@ -390,4 +378,3 @@
     display: flex;
   }
 }
-
