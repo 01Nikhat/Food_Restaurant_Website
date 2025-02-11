@@ -61,6 +61,7 @@ import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
 import food_33 from "./food_item_33.jpg"
+import food_34 from "./food_34.jpg"
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -115,7 +116,8 @@ export const assets = {
     shape6,
     shape7,
     shape8,
-    food_33
+    food_33,
+
 
     
 }
@@ -156,7 +158,8 @@ export const menu_list = [
     {
       menu_name: "Paratha", // Fixed: "paratha" → "Paratha"
       menu_image: food_33
-    }
+    },
+
   ];
 
 export const food_list = [
@@ -395,6 +398,14 @@ export const food_list = [
         name: "Aloo Paratha",
         image: food_33,
         price: 45,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Paratha"
+    },
+    {
+        _id: "34",
+        name: "Plain Paratha",
+        image: food_33,
+        price: 35,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Paratha"
     }

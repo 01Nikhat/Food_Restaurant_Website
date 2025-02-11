@@ -31,6 +31,7 @@ const onSubmitHandler = async(event)=>{
   formData.append("category",data.category)
   formData.append("image",image)
   const response = await axios.post(`${url}/api/food/add`,formData);
+  console.log(response.data); // Log response to inspect
 
   if(response.data.success){
       setData({
@@ -72,12 +73,13 @@ const onSubmitHandler = async(event)=>{
             <select onChange={onChangeHandler}  name="category" >
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
-              <option value="Deserts">Deserts</option>
+              <option value="Desserts">Desserts</option>
               <option value="Sandwich"> Sandwich</option>
               <option value="Pure Veg">Pure Veg</option>
               <option value="Pasta">Pasta</option>
               <option value="Noodles">Noodles</option>
               <option value="Noodles">Cake</option>
+              <option value="Paratha">Paratha</option>
             </select>
           </div>
           <div className="add-price flex-col">
