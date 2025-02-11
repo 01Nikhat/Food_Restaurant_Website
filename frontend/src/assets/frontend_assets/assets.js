@@ -122,41 +122,42 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Salad",
-        menu_image: menu_1
+      menu_name: "Salad",
+      menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
-        menu_image: menu_2
+      menu_name: "Rolls",
+      menu_image: menu_2
     },
     {
-        menu_name: "Deserts",
-        menu_image: menu_3
+      menu_name: "Desserts", // Fixed typo: "Deserts" → "Desserts"
+      menu_image: menu_3
     },
     {
-        menu_name: "Sandwich",
-        menu_image: menu_4
+      menu_name: "Sandwich",
+      menu_image: menu_4
     },
     {
-        menu_name: "Cake",
-        menu_image: menu_5
+      menu_name: "Cake",
+      menu_image: menu_5
     },
     {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
+      menu_name: "Pure Veg",
+      menu_image: menu_6
     },
     {
-        menu_name: "Pasta",
-        menu_image: menu_7
+      menu_name: "Pasta",
+      menu_image: menu_7
     },
     {
-        menu_name: "Noodles",
-        menu_image: menu_8
+      menu_name: "Noodles",
+      menu_image: menu_8
     },
     {
-        menu_name:"paratha",
-        menu_image: food_33
-    }]
+      menu_name: "Paratha", // Fixed: "paratha" → "Paratha"
+      menu_image: food_33
+    }
+  ];
 
 export const food_list = [
     {
@@ -222,28 +223,28 @@ export const food_list = [
         image: food_9,
         price: 44,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
+        category: "Desserts"
     }, {
         _id: "10",
         name: "Fruit Ice Cream",
         image: food_10,
         price: 52,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
+        category: "Desserts"
     }, {
         _id: "11",
         name: "Jar Ice Cream",
         image: food_11,
         price: 100,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
+        category: "Desserts"
     }, {
         _id: "12",
         name: "Vanilla Ice Cream",
         image: food_12,
         price: 32,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Deserts"
+        category: "Desserts"
     },
     {
         _id: "13",
@@ -395,6 +396,6 @@ export const food_list = [
         image: food_33,
         price: 45,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "paratha"
+        category: "Paratha"
     }
 ]
