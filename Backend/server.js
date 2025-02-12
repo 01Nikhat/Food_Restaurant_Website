@@ -7,6 +7,9 @@ import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";  // Ensure this is imported correctly
 import "dotenv/config";
+// index.js or app.js
+
+
 
 // Razorpay instance setup
 export const instance = new Razorpay({

@@ -12,6 +12,8 @@ import MyOrders from "./components/MyOrder/MyOrders";
 import Cafe from "./components/Cafe/Cafe";
 
 
+
+
 function App() {
   const [showLogin, setShowLogin] = useState(false);
 
@@ -27,6 +29,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<PlaceOrder />} />
        <Route path="/myorders" element={<MyOrders /> } />
+      
       </Routes>
       </div>
     </div>
