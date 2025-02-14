@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import "./Header.css";
 import { assets } from '../../../assets/frontend_assets/assets';
 
-const Header = () => {
+const Header = ({ scrollToExploreMenu }) => {
   const images = [assets.slider1, assets.slider2, assets.slider3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -43,6 +43,7 @@ const Header = () => {
           initial={{ opacity: 0, y: 30 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="btn"
+          onClick={scrollToExploreMenu} // Scrolls to ExploreMenu when clicked
         >
           View Menu
         </motion.button>

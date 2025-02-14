@@ -301,7 +301,19 @@ const updateStatus = async (req, res) => {
   }
 };
 
+//for clear the cart data 
+
+const clearCart = async (req, res) => {
+  try {
+    await userModel.findByIdAndUpdate(req.userId, { cartData: {} })
+    res.json({ success: true, message: "Cart cleared successfully" })
+  } catch (error) {
+    console.error("Error clearing cart:", error)
+    res.status(500).json({ success: false, message: "Error clearing cart" })
+  }
+}
 
 
 
-export { placeOrder, verifyPayment, userOrders, listOrders, updateStatus };
+
+export { placeOrder, verifyPayment, userOrders, listOrders, updateStatus ,clearCart};

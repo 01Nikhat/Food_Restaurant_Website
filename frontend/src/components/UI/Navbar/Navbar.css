@@ -95,7 +95,7 @@
   background: transparent;
   font-size: 16px;
   color: #5a0101;
-  border: 1px solid #fff4f2;
+  border: 1px solid #5a0101;
   padding: 10px 30px;
   border-radius: 25px;
   cursor: pointer;
@@ -255,8 +255,43 @@
   .navbar-right {
     gap: 15px;
   }
+  .navbar-search {
+    position: relative;
+    width: auto; /* Allow the container to adjust based on content */
+  }
+
   .navbar-search input {
-    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0; /* Start from the left edge of the container */
+    transform: translateY(-50%);
+    background: white; /* Ensure the input has a background */
+    padding: 5px 10px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Add a border for visibility */
+    border-radius: 25px; /* Rounded corners */
+    z-index: 10; /* Ensure the input is above other elements */
+    width: 0; /* Hide the input by default */
+    opacity: 0; /* Make it invisible */
+    transition: width 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+
+  .navbar-search.open input {
+    width: 150px; /* Adjust the width when the search bar is open */
+    opacity: 1; /* Make it visible */
+    left: 0; /* Keep it aligned with the icon */
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 0; /* Position the icon on the right */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20; /* Ensure the icon is above the input */
+    cursor: pointer;
+  }
+
+  .navbar-search.open .search-icon {
+    right: 10px; /* Adjust icon position when expanded */
   }
 }
 
@@ -294,11 +329,12 @@
 
 .navbar.transparent button {
   border-color: white;
-  color: white;
+  color: #5a0101;
 }
 
 .navbar.transparent button:hover {
   background-color: rgba(255, 255, 255, 0.1);
+  color: #f3f3f3;
 }
 
 .navbar-search .searchcolor {
@@ -376,5 +412,44 @@
   .navbar-cart-icon,
   .navbar-profile {
     display: flex;
+  }
+
+  .navbar-search {
+    position: relative;
+    width: auto; /* Allow the container to adjust based on content */
+  }
+
+  .navbar-search input {
+    position: absolute;
+    top: 50%;
+    left: 0; /* Start from the left edge of the container */
+    transform: translateY(-50%);
+    background: white; /* Ensure the input has a background */
+    padding: 5px 10px; /* Add padding for better appearance */
+    border: 1px solid #ccc; /* Add a border for visibility */
+    border-radius: 25px; /* Rounded corners */
+    z-index: 10; /* Ensure the input is above other elements */
+    width: 0; /* Hide the input by default */
+    opacity: 0; /* Make it invisible */
+    transition: width 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  }
+
+  .navbar-search.open input {
+    width: 150px; /* Adjust the width when the search bar is open */
+    opacity: 1; /* Make it visible */
+    left: 0; /* Keep it aligned with the icon */
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 0; /* Position the icon on the right */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20; /* Ensure the icon is above the input */
+    cursor: pointer;
+  }
+
+  .navbar-search.open .search-icon {
+    right: 10px; /* Adjust icon position when expanded */
   }
 }
