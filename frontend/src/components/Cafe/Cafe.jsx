@@ -125,7 +125,7 @@ const Cafe = () => {
           <div className="hero-text">
             <h1>Welcome to Cafe Delight</h1>
             <p>Experience the finest coffee and pastries in town</p>
-            <a href="#menu" className="btn">Explore Menu</a>
+            <a href="#menu" className="btn-explore">Explore Menu</a>
           </div>
         </div>
       </section>

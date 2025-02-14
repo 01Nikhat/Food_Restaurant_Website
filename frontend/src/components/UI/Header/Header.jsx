@@ -37,16 +37,18 @@ const Header = ({ scrollToExploreMenu }) => {
           Choose from a diverse menu featuring a delectable array of dishes crafted
           with the finest ingredients.
         </motion.p>
+        <div className='button-container'>
+          <motion.button
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="btn"
+            onClick={scrollToExploreMenu} // Scrolls to ExploreMenu when clicked
+          >
+            View Menu
+          </motion.button>
+        </div>
         
-        <motion.button
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: 30 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="btn"
-          onClick={scrollToExploreMenu} // Scrolls to ExploreMenu when clicked
-        >
-          View Menu
-        </motion.button>
       </div>
     </div>
   );

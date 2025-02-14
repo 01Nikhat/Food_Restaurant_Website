@@ -58,7 +58,7 @@ body {
 
 /* button */
 
-.btn {
+.btn-explore {
   margin: 20px;
   padding: 15px 40px;
   border: none;
@@ -72,7 +72,7 @@ body {
   
   
 }
-.btn::after {
+.btn-explore::after {
   content: "";
   z-index: -1;
   position: absolute;
@@ -86,7 +86,7 @@ body {
  
 }
 /* glow */
-.btn::before {
+.btn-explore::before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -114,15 +114,15 @@ body {
 }
 
 /* hover */
-.btn:hover::before {
+.btn-explore:hover::before {
   opacity: 1;
 }
 
-.btn:active:after {
+.btn-explore:active:after {
   background: transparent;
 }
 
-.btn:active {
+.btn-explore:active {
   color: #000;
   font-weight: bold;
 }

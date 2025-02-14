@@ -142,7 +142,7 @@ const ExploreMenu = () => {
         Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings.
       </p>
 
-      <button onClick={() => handleCategoryClick("All")} className="main-menu-button btn">
+      <button onClick={() => handleCategoryClick("All")} className="main-menu-button button">
         Main Menu
       </button>
 

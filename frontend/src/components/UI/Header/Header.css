@@ -35,12 +35,21 @@
   padding: 20px;
   border-radius: 8px;
   max-width: 70%;
+  align-items: center;  /* Horizontally center content */
+  margin: 0 auto; /* Ensure container itself is centered */
 }
 
 /* button */
 
+.button-container {
+  text-align: center; /* Center the button within this container */
+  justify-content: center; /* Center horizontally */
+}
+
 .btn {
-  margin: 20px;
+  display: block; /* Change to block to enable margin auto centering */
+  width: 200px; /* Define a specific width */
+  margin: 20px auto; /* Center horizontally */
   padding: 15px 40px;
   border: none;
   outline: none;
@@ -50,9 +59,10 @@
   position: relative;
   z-index: 0;
   border-radius: 15px;
-  
-  
+  font-weight: bold;
+  font-size: 15px;
 }
+
 .btn::after {
   content: "";
   z-index: -1;
