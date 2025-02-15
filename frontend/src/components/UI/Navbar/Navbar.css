@@ -247,6 +247,11 @@
   border-bottom: 2px solid #310101;
 }
 
+/* Mobile Sign In Button Styles */
+.mobile-signin {
+  display: none !important; /* Hidden by default */
+}
+
 /* Media Queries */
 @media (max-width: 750px) {
   .navbar-menu {
@@ -293,11 +298,27 @@
   .navbar-search.open .search-icon {
     right: 10px; /* Adjust icon position when expanded */
   }
+  .desktop-signin {
+    display: none !important;
+  }
+  
+  .mobile-signin {
+    display: block !important;
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    margin-left: auto; /* Push to the right */
+    margin-right: 15px; /* Add spacing before menu icon */
+  }
 }
 
 @media (max-width: 400px) {
   .navbar-search input {
     width: 80px;
+  }
+  .mobile-signin {
+    padding: 6px 15px !important;
+    font-size: 13px !important;
+    margin-right: 10px;
   }
 }
 
@@ -352,7 +373,7 @@
   }
 
   .navbar-right {
-    gap: 15px;
+    gap: 10px !important;
   }
 
   .navbar-right button {
@@ -451,5 +472,16 @@
 
   .navbar-search.open .search-icon {
     right: 10px; /* Adjust icon position when expanded */
+  }
+  .desktop-signin {
+    display: none !important;
+  }
+  
+  .mobile-signin {
+    display: block !important;
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    margin-left: auto; /* Push to the right */
+    margin-right: 15px; /* Add spacing before menu icon */
   }
 }

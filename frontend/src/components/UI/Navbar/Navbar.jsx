@@ -420,12 +420,14 @@ const Navbar = ({ setShowLogin ,showLogin}) => {
         </Link>
 
         {!token ? (
-          <button onClick={() => {
-            //console.log("Sign In button clicked"); // Debugging log
-            setShowLogin(true);
-           // console.log("showLogin value",showLogin);
-            
-          }}>Sign In</button>
+          <>
+          <button className="desktop-signin" onClick={() => setShowLogin(true)}>
+            Sign In
+          </button>
+          <button className="mobile-signin" onClick={() => setShowLogin(true)}>
+            Sign In
+          </button>
+        </>
         ) : (
           <div className="navbar-profile">
             <img src={assets.profile_icon || "/placeholder.svg"} alt="Profile" />
