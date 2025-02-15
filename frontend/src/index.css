@@ -20,7 +20,9 @@ a{
 }
 .app, .app-element {
   width: 100%;
-  
-  max-width: 1200vw; 
+  max-width: 1200px; /* Adjust as needed */
   margin: 0 auto;
+}
+body, html {
+  overflow-x: hidden;
 }
