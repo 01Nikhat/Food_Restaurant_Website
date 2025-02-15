@@ -203,7 +203,7 @@ export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({})
-  const url = import.meta.env.VITE_BACKEND_URL
+  const url = import.meta.env.VITE_BACKEND_URL || "https://food-restaurant-website-backend.onrender.com"
   const [token, setToken] = useState("")
   const [food_list, setFoodlist] = useState([])
   const [isLoading, setIsLoading] = useState(true)
