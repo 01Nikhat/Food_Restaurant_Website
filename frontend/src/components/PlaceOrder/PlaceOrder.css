@@ -3,7 +3,8 @@ display: flex;
 align-items: start;
 justify-content: space-between;
 margin-top: 100px;
-gap:50px
+flex-direction: column; /* Stack on mobile */
+gap: 30px; /* Reduce gap for smaller screens */
 }
 .placeorder-left{
   width: 100%;
@@ -35,4 +36,11 @@ gap:50px
 }
 .place-order .cart-total button{
   margin-top: 30px;
+}
+@media (min-width: 600px) {
+  .place-order {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }
