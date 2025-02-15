@@ -21,7 +21,7 @@ const razorpay = new Razorpay({
 });
 
 const placeOrder = async (req, res) => {
-  const frontend_url = process.env.FRONTEND_URL ;
+  const frontend_url = process.env.FRONTEND_URL || "http://localhost:5174" ;
 
   try {
     const newOrder = new orderModel({
