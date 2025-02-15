@@ -1,13 +1,21 @@
 .place-order{
-display: flex;
+display: block;
 align-items: start;
 justify-content: space-between;
 margin-top: 100px;
-gap:50px
+flex-direction: column; /* Stack on mobile */
+gap: 30px; /* Reduce gap for smaller screens */
+  position: relative;
+  z-index: 1;
+  
+  will-change: transform;
+
+
 }
 .placeorder-left{
   width: 100%;
   max-width: max(30%,500px);
+ 
 }
 .placeorder-left .title{
   font-size: 30px;
@@ -32,7 +40,15 @@ gap:50px
 .placeorder-right{
   width: 100%;
   max-width: max(40%,500px);
+ 
 }
 .place-order .cart-total button{
   margin-top: 30px;
+}
+@media (min-width: 600px) {
+  .place-order {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 }

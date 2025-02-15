@@ -24,3 +24,6 @@ a{
   max-width: 1200vw; 
   margin: 0 auto;
 }
+body, html {
+  overflow-x: hidden;
+}
